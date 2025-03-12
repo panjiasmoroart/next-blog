@@ -1,7 +1,14 @@
 import Image from "next/image";
+import Menu from "@/components/Header/Menu/Menu";
+import TopNav from "@/components/Header/TopNav/TopNav";
 
 export default function Home() {
   return (
-    <h1 className="bg-blue-400">This is home page</h1>
+    <div className="overflow-x-hidden">
+       <header id="header">
+           <TopNav />
+           <Menu />
+       </header>
+    </div>
   );
 }

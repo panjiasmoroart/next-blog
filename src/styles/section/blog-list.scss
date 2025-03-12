@@ -63,7 +63,21 @@
     }
 }
 
->.list-nav {
+// >.list-nav {
+//     .nav-item {
+//         cursor: pointer;
+//         transition: all ease 0.3s;
+
+//         &.active,
+//         &:hover {
+//             background-color: var(--blue);
+//             border: 1px solid var(--blue);
+//             color: var(--white);
+//         }
+//     }
+// }
+
+.list-nav {
     .nav-item {
         cursor: pointer;
         transition: all ease 0.3s;
@@ -76,6 +90,7 @@
         }
     }
 }
+
 
 .cate-block {
     .list-nav {
