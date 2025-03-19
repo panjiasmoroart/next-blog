@@ -6,6 +6,7 @@ import Service from "@/components/Service/Service";
 import serviceData from '@/data/service.json';
 
 export default function Home() {
+  
   return (
     <div className="overflow-x-hidden">
       <header id="header">
