@@ -12,6 +12,7 @@ import serviceData from '@/data/service.json';
 import blogData from '@/data/blog.json'
 import Blog from "@/components/Blog/Blog";
 import Partner from "@/components/Partner/Partner";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -31,6 +32,9 @@ export default function Home() {
           <Testimonial />
           <Blog data={blogData} />
           <Partner className='lg:mt-[100px] sm:mt-16 mt-10' />
+          <footer id="footer">
+            <Footer />
+          </footer>
        </main>
     </div>
   );
