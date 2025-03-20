@@ -1,14 +1,12 @@
 import Footer from '@/components/Footer/Footer';
- import Menu from '@/components/Header/Menu/Menu';
- import TopNav from '@/components/Header/TopNav/TopNav';
- import Partner from '@/components/Partner/Partner';
- import AboutSection from '@/components/Section/AboutSection';
- import Breadcrumb from '@/components/Section/Breadcrumb';
- import Counter from '@/components/Section/Counter';
- import Service from '@/components/Service/Service';
- import React from 'react';
- import serviceData from '@/data/service.json'
- import Image from 'next/image';
+import Menu from '@/components/Header/Menu/Menu';
+import TopNav from '@/components/Header/TopNav/TopNav';
+import Partner from '@/components/Partner/Partner';
+import Breadcrumb from '@/components/Section/Breadcrumb';
+import Service from '@/components/Service/Service';
+import React from 'react';
+import serviceData from '@/data/service.json'
+import Image from 'next/image';
  
  const ServicePage = () => {
     return (
