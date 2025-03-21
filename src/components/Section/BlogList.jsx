@@ -13,7 +13,8 @@ const BlogList = ({data}) => {
                         <div className='list flex flex-col gap-y-10'>
                             {
                                 data.slice(0, 5).map(( item, index ) => (
-                                <Link key={index} className='blog-item flex max-md:flex-col md:items-center gap-7 gap-y-5' href='/'>
+                                <Link key={index} className='recent-post-item flex items-start gap-4 cursor-pointer' href={'/blog/blog-details/[slug]'}
+                                    as={`/blog/blog-details/${item.title.toLowerCase().replace(/ /g,'-')}`}>
                                     <div className='w-full md:w-1/2'>
                                         <div className='bg-img w-full overflow-hidden rounded-2xl'>
                                             <Image alt={item.img} width={5000} height={5000} className='w-full h-full block' src={item.img} />  
