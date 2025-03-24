@@ -90,7 +90,7 @@ const BlogList = ({data}) => {
                                     <Link key={index} className='recent-post-item flex items-start gap-4 cursor-pointer' href={'/blog/blog-details/[slug]'}
                                     as={`/blog/blog-details/${item.title.toLowerCase().replace(/ /g,'-')}`}>
                                 <div className='item-img flex-shrink-0 w-20 h-20 rounded'>
-                                    <Image width={5000} height={5000} src={`${item.img}`} className='w-full h-full object-cover'/> 
+                                    <Image alt='nesting' width={5000} height={5000} src={`${item.img}`} className='w-full h-full object-cover'/> 
                                 </div>
 
                                 <div className='item-infor w-full'>
