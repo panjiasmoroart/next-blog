@@ -12,7 +12,7 @@ import ClipLoader from 'react-spinners/ClipLoader';
 const Slider = () => {
     const [sliders, setSliders] = useState([]);
     const [loading, setLoading] = useState(true);
-    console.log('sliders >>> ', sliders)
+    // console.log('sliders >>> ', sliders)
  
     useEffect(() => {
         const fetchItem = async () => {
@@ -67,7 +67,7 @@ const Slider = () => {
                                                 src={`${IMAGE_BASE_URL}/${slider.image}`}
                                                 width={4000}
                                                 height={3000}
-                                                alt='slider1'
+                                                alt={slider.heading }
                                                 priority={true}
                                                 className='w-full h-full object-cover'
                                             /> 
@@ -82,16 +82,17 @@ const Slider = () => {
                                                 </div>
                                 
                                                 <div className='relative overflow-hidden'>
-                                                    <span className='block relative overflow-hidden'>Our Solution</span>
-                                                    <span className='block absolute top-0 left-0 w-full h-full'>Our Solution</span>
+                                                    <span className='block relative overflow-hidden'>{slider.heading }</span>
+                                                    <span className='block absolute top-0 left-0 w-full h-full'>{slider.heading }</span>
                                                 </div> 
                                             </div>
                                 
-                                        <div className='body2 mt-3 text-secondary'> justify items along the center of the container’s main axis <br/>justify items along the center of the container’s main axis 
+                                        <div className='body2 mt-3 text-secondary'> 
+                                            {slider.description } 
                                         </div>
                                 
                                         <div className='button-block md:mt-10 mt-6'>
-                                            <Link className='button-main bg-blue-700 text-white hover:bg-blue-500' href='/service'> 
+                                            <Link className='button-main bg-blue-700 text-white hover:bg-blue-500' href={slider.link}> 
                                                 Discovery Now 
                                             </Link> 
                                         </div> 
