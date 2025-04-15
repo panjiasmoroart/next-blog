@@ -30,7 +30,7 @@ import Footer from '@/components/Footer/Footer';
          Cryptocurrency Trading
          </div>
          <div className='bg-img mt-5 mb-5'>
-             <Image width={5000} height={5000} className='w-full h-full rounded-xl' src='/images/assessment.webp' /> 
+             <Image width={5000} height={5000} className='w-full h-full rounded-xl' src='/images/assessment.webp' alt='image belum tersedia' /> 
          </div>
          <div className='body2 text-secondary mt-4'>
          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -79,7 +79,7 @@ import Footer from '@/components/Footer/Footer';
  
      <div className='ads-block rounded-lg md:mt-10 mt-6 relative'>
          <div className='bg-img'>
-             <Image width={5000} height={5000} src='/images/ads.webp' /> 
+             <Image width={5000} height={5000} src='/images/ads.webp' alt='image belum tersedia' /> 
          </div>
  
          <div className='text flex flex-col justify-between absolute left-0 top-0 w-full h-full p-8'>
