@@ -30,7 +30,7 @@ export default function Home() {
           <PaymentGatewayTwo />
           <FormRequest />
           <Testimonial />
-          <Blog data={blogData} />
+          <Blog />
           <Partner className='lg:mt-[100px] sm:mt-16 mt-10' />
           <footer id="footer">
             <Footer />
