@@ -118,30 +118,13 @@ const BlogList = ({data}) => {
                             <div className='heading6'>Blog Category</div> 
                     
                             <div className='list-nav mt-4'>
-                                <Link className='nav-item  ' href='/'>
-                                    <div className='text-button text-secondary mt-2'>
-                                        payment solution
+                            {
+                                categories.map((cat) => (
+                                    <div key={cat.id} className={`text-button text-secondary mt-2 cursor-pointer`}>
+                                        { cat.blog_category }
                                     </div>
-                                </Link>
-                    
-                                <Link className='nav-item  ' href='/'>
-                                    <div className='text-button text-secondary mt-2'>
-                                        personal finance
-                                    </div>
-                                </Link>
-                    
-                                <Link className='nav-item ' href='/'>
-                                    <div className='text-button text-secondary mt-2'>
-                                        online banking
-                                    </div>
-                                </Link>
-                    
-                    
-                                <Link className='nav-item ' href='/'>
-                                    <div className='text-button text-secondary mt-2'>
-                                        financial planning
-                                    </div>
-                                </Link>
+                                ))
+                            }     
                             </div> 
                         </div>
 
