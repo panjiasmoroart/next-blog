@@ -11,13 +11,18 @@ const BlogList = ({data}) => {
 
     const [blog, setBlog] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState(null);
     const [loading, setLoading] = useState(true);
     // console.log(sliders)
  
     useEffect(() => {
         const fetchItem = async () => {
+            setLoading(true);
             try {
-                const response = await fetch(`${API_BASE_URL}/allblog`);
+                const url = selectedCategory
+                ? `${API_BASE_URL}/category/${selectedCategory}/blogs`
+                : `${API_BASE_URL}/allblog`;
+                const response = await fetch(url);  
                 const data = await response.json();
                 setBlog(data);
             } catch (error) {
@@ -27,7 +32,7 @@ const BlogList = ({data}) => {
             }
         };
         fetchItem();
-    },[]);
+    },[selectedCategory]);
 
     useEffect(() => {
         const fetchCatItem = async () => {
@@ -43,6 +48,10 @@ const BlogList = ({data}) => {
         };
         fetchCatItem();
     },[]);
+
+    const handleCategoryClick = (categoryId) => {
+        setSelectedCategory(categoryId);
+    }
 
     const getTextFromHTML = (html, limit = 300) => {
         const div = document.createElement('div');
@@ -118,13 +127,16 @@ const BlogList = ({data}) => {
                             <div className='heading6'>Blog Category</div> 
                     
                             <div className='list-nav mt-4'>
-                            {
-                                categories.map((cat) => (
-                                    <div key={cat.id} className={`text-button text-secondary mt-2 cursor-pointer`}>
-                                        { cat.blog_category }
-                                    </div>
-                                ))
-                            }     
+                                <div className={`text-button text-secondary mt-2 cursor-pointer ${selectedCategory === null ? 'font-extrabold' : ''} `} onClick={() => handleCategoryClick(null)}>
+                                    All Category 
+                                </div>
+                                {
+                                    categories.map((cat) => (
+                                        <div key={cat.id} className={`text-button text-secondary mt-2 cursor-pointer ${selectedCategory === cat.id ? 'font-extrabold' : ''} `} onClick={() => handleCategoryClick(cat.id)} >
+                                            { cat.blog_category }
+                                        </div>
+                                    ))
+                                }     
                             </div> 
                         </div>
 
