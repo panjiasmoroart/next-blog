@@ -8,7 +8,7 @@ import { API_BASE_URL } from '@/config/config';
  const TopNav = () => {
     const [header, setHeader] = useState([]);
     const [loading, setLoading] = useState(true);
-    console.log('sitesetting >> ', header)
+    // console.log('sitesetting >> ', header); 
 
     useEffect(() => {
         const fetchItem = async () => {
