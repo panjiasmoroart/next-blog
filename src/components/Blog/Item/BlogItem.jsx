@@ -14,7 +14,7 @@ const BlogItem = ({ data }) => {
 
     return (
         <div className='blog-item'>
-             <Link className='blog-item-main h-full block bg-white border border-line overflow-hidden rounded-2xl hover-box-shadow duration-500'href={'/blog/blog-details/[slug]'}
+             <Link className='blog-item-main h-full block bg-white border border-line overflow-hidden rounded-2xl hover-box-shadow duration-500' href={'/blog/blog-details/[slug]'}
              as={`/blog/blog-details/${data.post_slug.toLowerCase().replace(/ /g,'-')}`}>
                 <div className='bg-img w-full overflow-hidden'>
                 <Image width={5000} height={5000} className='w-full h-full block' src={`${IMAGE_BASE_URL}/${data.image}`} alt={data.post_title} />  
