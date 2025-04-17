@@ -15,7 +15,7 @@ import { API_BASE_URL } from '@/config/config';
 const AboutPage = () => {
     const [loading, setLoading] = useState(true);
     const [aboutpage, setAboutpage] = useState([]);
-    console.log('aboutpage >>> ', aboutpage);
+    // console.log('aboutpage >>> ', aboutpage);
 
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 1500);

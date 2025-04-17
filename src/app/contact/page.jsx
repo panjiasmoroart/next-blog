@@ -1,15 +1,36 @@
 'use client'
+
+import React, { useState } from 'react'; 
 import Footer from '@/components/Footer/Footer';
 import Menu from '@/components/Header/Menu/Menu';
 import TopNav from '@/components/Header/TopNav/TopNav';
 import Partner from '@/components/Partner/Partner'; 
 import Breadcrumb from '@/components/Section/Breadcrumb'; 
-import React, { useState } from 'react'; 
 import Image from 'next/image';
 import * as Icon from '@phosphor-icons/react/dist/ssr'
 
 
 const ContactPage = () => {
+
+    const [formData, setFormData] = useState({
+        name: '',
+        subject: '',
+        email: '',
+        message: '' 
+    });
+    console.log('formData >>> ', formData);
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    }
 
     return (
         <div className="overflow-x-hidden">
@@ -93,7 +114,7 @@ const ContactPage = () => {
 
     
     <div className='w-full xl:w-3/5 xl:pl-20'>
-    <form onSubmit="" className='form-block flex flex-col justify-between gap-5'>
+    <form className='form-block flex flex-col justify-between gap-5'>
         <div className='heading'>
             <div className='heading5'>Request a message</div>
             <div className='body3 text-secondary mt-2'>
@@ -101,27 +122,34 @@ const ContactPage = () => {
             </div> 
         </div>
 
+    {successMessage && <p className='text-green-800'>{successMessage} </p>}
+    {errorMessage && <p className='text-red-800'>{errorMessage} </p>}  
 
+    <div>
+        {JSON.stringify(formData)}
+    </div>  
 
     <div className='grid sm:grid-cols-2 gap-5'>
         <div className='w-full'>
-            <input type="text" name="name" value="" onChange="" placeholder='Name' className='w-full bg-slate-100 text-secondary caption1 px-4 py-3 rounded-lg'  /> 
+            <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder='Name' className='w-full bg-slate-100 text-secondary caption1 px-4 py-3 rounded-lg'  /> 
         </div>
 
         <div className='w-full'>
-            <input type="text" name="subject" value="" onChange="" placeholder='Subject' className='w-full bg-slate-100 text-secondary caption1 px-4 py-3 rounded-lg'  /> 
+            <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder='Subject' className='w-full bg-slate-100 text-secondary caption1 px-4 py-3 rounded-lg'  /> 
         </div>
 
         <div className='col-span-2'>
-        <input type="email" name="email" placeholder='Email' value="" onChange="" className='w-full bg-slate-100 text-secondary caption1 px-4 py-3 rounded-lg'  /> 
+        <input type="email" name="email" placeholder='Email' value={formData.email} onChange={handleChange} className='w-full bg-slate-100 text-secondary caption1 px-4 py-3 rounded-lg'  /> 
         </div>
 
         <div className='col-span-2 w-full'>
-            <textarea name="message" id="message" rows={4} value="" onChange="" placeholder='Your Message' className='w-full bg-slate-100 text-secondary caption1 px-4 py-3 rounded-lg' ></textarea> 
+            <textarea name="message" id="message" rows={4} value={formData.message} onChange={handleChange} placeholder='Your Message' className='w-full bg-slate-100 text-secondary caption1 px-4 py-3 rounded-lg' ></textarea> 
         </div>
 
         <div className='button-block'>
-            <button type='submit' className='button-main hover:border-blue-800 bg-blue-500 text-white text-button rounded-full'> Send Message </button>
+            <button disabled={isSubmitting}  type='submit' className='button-main hover:border-blue-800 bg-blue-500 text-white text-button rounded-full'> 
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+            </button>
         </div> 
     </div> 
     </form> 

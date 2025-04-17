@@ -13,7 +13,7 @@ const PaymentGateway = () => {
 
     const [gatewayone, setGatewayone] = useState([]);
     const [loading, setLoading] = useState(true);
-    console.log('gatewayone >>> ', gatewayone);
+    // console.log('gatewayone >>> ', gatewayone);
 
     useEffect(() => {
         const fetchItem = async () => {
